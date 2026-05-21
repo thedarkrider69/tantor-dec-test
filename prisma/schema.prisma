@@ -1,0 +1,213 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+
+model User {
+  id           String          @id @default(cuid())
+  email        String          @unique
+  fullName     String
+  passwordHash String
+  role         String          @default("USER")
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  sessions     Session[]
+  memberships  Membership[]
+  activities   ActivityLog[]
+  tickets      SupportTicket[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Organization {
+  id          String   @id @default(cuid())
+  name        String
+  plan        String   @default("Essentielle")
+  trialEndsAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  memberships Membership[]
+  companies   Company[]
+  invoices    Invoice[]
+}
+
+model Membership {
+  id             String     @id @default(cuid())
+  userId         String
+  organizationId String
+  role           String   @default("MEMBER")
+  createdAt      DateTime   @default(now())
+
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, organizationId])
+}
+
+model Company {
+  id             String   @id @default(cuid())
+  organizationId String
+  name           String
+  siren          String
+  siret          String?
+  legalForm      String
+  taxRegime      String
+  vatRegime      String
+  country        String   @default("France")
+  closingDate    String
+  address        String?
+  representative String?
+  repEmail       String?
+  repPhone       String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  fiscalYears  FiscalYear[]
+  declarations Declaration[]
+
+  @@index([organizationId])
+}
+
+model FiscalYear {
+  id          String   @id @default(cuid())
+  companyId   String
+  startDate   DateTime
+  endDate     DateTime
+  fecImported Boolean  @default(false)
+  fecFileName String?
+  linesCount  Int      @default(0)
+  benefit     Float    @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  company      Company       @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  declarations Declaration[]
+  accountingEntries AccountingEntry[]
+
+  @@index([companyId])
+}
+
+model AccountingEntry {
+  id           String   @id @default(cuid())
+  fiscalYearId String
+  account      String
+  label        String
+  debit        Float    @default(0)
+  credit       Float    @default(0)
+  createdAt    DateTime @default(now())
+
+  fiscalYear FiscalYear @relation(fields: [fiscalYearId], references: [id], onDelete: Cascade)
+}
+
+model Declaration {
+  id             String            @id @default(cuid())
+  companyId      String
+  fiscalYearId   String?
+  reference      String            @unique
+  type           String
+  fiscalYear     Int
+  dueDate        DateTime?
+  status         String            @default("TO_COMPLETE")
+  amount         Float             @default(49)
+  valuesJson     String            @default("{}")
+  anomaliesJson  String            @default("[]")
+  ediFileName    String?
+  ediContent     String?
+  ediFilePath    String?
+  ediDeclarationPath String?
+  ediGeneratedAt DateTime?
+  lastValidatedAt DateTime?
+  sentAt         DateTime?
+  acceptedAt     DateTime?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  company    Company     @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  year       FiscalYear? @relation(fields: [fiscalYearId], references: [id], onDelete: SetNull)
+  invoices   Invoice[]
+
+  @@index([companyId])
+}
+
+model Invoice {
+  id             String        @id @default(cuid())
+  organizationId String
+  declarationId  String?
+  number         String        @unique
+  amountHt       Float
+  vat            Float
+  amountTtc      Float
+  status         String        @default("PENDING")
+  issuedAt       DateTime      @default(now())
+  paidAt         DateTime?
+  invoiceFilePath String?
+  invoiceJsonPath String?
+  receiptFilePath String?
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  declaration  Declaration? @relation(fields: [declarationId], references: [id], onDelete: SetNull)
+  payment      Payment?
+}
+
+model Payment {
+  id          String   @id @default(cuid())
+  invoiceId   String   @unique
+  reference   String   @unique
+  amount      Float
+  method      String   @default("Carte bancaire")
+  status      String   @default("Réussi")
+  paidAt      DateTime @default(now())
+
+  invoice Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+}
+
+model HelpArticle {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  type        String   @default("PDF")
+  url         String?
+  createdAt   DateTime @default(now())
+}
+
+model SupportTicket {
+  id        String       @id @default(cuid())
+  userId    String?
+  name      String
+  email     String
+  subject   String
+  message   String
+  status    String   @default("OPEN")
+  reply     String?
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  label     String
+  detail    String?
+  createdAt DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+}

@@ -1,0 +1,30 @@
+{
+  "name": "tantor-dec-complet",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "node prisma/seed.mjs",
+    "setup": "prisma db push && node prisma/seed.mjs"
+  },
+  "dependencies": {
+    "@prisma/client": "5.22.0",
+    "next": "14.2.35",
+    "prisma": "5.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.18",
+    "typescript": "^5.6.3"
+  }
+}
