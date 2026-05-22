@@ -7,9 +7,15 @@ type BasicCompany = { id: string; name: string; siren?: string | null; organizat
 type BasicDeclaration = { id: string; reference: string; type?: string | null; fiscalYear?: number | null; company?: BasicCompany | null };
 type BasicInvoice = { id: string; number: string; amountHt?: number; vat?: number; amountTtc?: number; status?: string; issuedAt?: Date | string; paidAt?: Date | string | null; declaration?: (BasicDeclaration & { company?: BasicCompany | null }) | null; payment?: { reference?: string; method?: string; status?: string; paidAt?: Date | string } | null };
 
+// En local, les fichiers sont écrits dans ./storage.
+// Sur Vercel, le système de fichiers du projet est en lecture seule :
+// on écrit donc temporairement dans /tmp pour éviter les erreurs serveur.
+// Pour une vraie production, remplacer ceci par Supabase Storage / S3 / R2.
 export const STORAGE_ROOT = process.env.TANTOR_STORAGE_DIR
   ? path.resolve(process.env.TANTOR_STORAGE_DIR)
-  : path.join(process.cwd(), "storage");
+  : process.env.VERCEL
+    ? path.join("/tmp", "tantor-storage")
+    : path.join(process.cwd(), "storage");
 
 export function safeName(value: string | null | undefined) {
   const cleaned = String(value || "sans-nom")
