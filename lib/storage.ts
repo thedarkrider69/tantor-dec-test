@@ -53,6 +53,7 @@ export async function ensureUserStorage(user: BasicUser) {
   await mkdir(path.join(root, "06-factures"), { recursive: true });
   await mkdir(path.join(root, "07-recus"), { recursive: true });
   await mkdir(path.join(root, "08-support"), { recursive: true });
+  await mkdir(path.join(root, "09-edi-requete-loc"), { recursive: true });
   return root;
 }
 
@@ -218,6 +219,30 @@ export async function saveSupportTicketSnapshot(user: BasicUser | null | undefin
   const filePath = path.join(root, "08-support", `${safeName(String(ticket.id || Date.now()))}.json`);
   await writeJson(filePath, { exportedAt: new Date().toISOString(), ticket });
   return relativeFromProject(filePath);
+}
+
+
+export async function saveEdiLocRequestFile({
+  user,
+  request,
+  fileName,
+  content,
+  response
+}: {
+  user: BasicUser;
+  request: { id: string; reference: string; company?: BasicCompany | null } & Record<string, unknown>;
+  fileName: string;
+  content: string;
+  response?: unknown;
+}) {
+  const root = await ensureUserStorage(user);
+  const companyPart = request.company ? `${safeName(request.company.name)}_${safeName(request.company.siren || request.company.id)}` : "entreprise";
+  const requestDir = path.join(root, "09-edi-requete-loc", companyPart, `${safeName(request.reference)}_${request.id.slice(0, 8)}`);
+  const ediPath = path.join(requestDir, fileName);
+  const snapshotPath = path.join(requestDir, "requete-loc.json");
+  await writeText(ediPath, content);
+  await writeJson(snapshotPath, { exportedAt: new Date().toISOString(), request, response: response ?? null });
+  return { filePath: relativeFromProject(ediPath), snapshotPath: relativeFromProject(snapshotPath) };
 }
 
 export async function listUserStorageFiles(user: BasicUser) {

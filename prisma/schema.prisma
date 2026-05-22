@@ -81,6 +81,7 @@ model Company {
   organization Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
   fiscalYears  FiscalYear[]
   declarations Declaration[]
+  ediLocRequests EdiLocRequest[]
 
   @@index([organizationId])
 }
@@ -210,4 +211,31 @@ model ActivityLog {
   createdAt DateTime @default(now())
 
   user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+
+model EdiLocRequest {
+  id              String   @id @default(cuid())
+  companyId       String
+  reference       String   @unique
+  requesterSiren  String
+  taxpayerSiren   String
+  requestCode     String   @default("LOC")
+  unitMode        Boolean  @default(false)
+  status          String   @default("DRAFT")
+  fileName        String?
+  fileContent     String?
+  filePath        String?
+  simulatedResponseJson String?
+  generatedAt     DateTime?
+  sentAt          DateTime?
+  acceptedAt      DateTime?
+  rejectedAt      DateTime?
+  rejectionReason String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@index([companyId])
 }

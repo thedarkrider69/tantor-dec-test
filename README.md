@@ -136,3 +136,33 @@ Pour déplacer le stockage ailleurs, ajoute cette variable dans `.env` :
 ```env
 TANTOR_STORAGE_DIR="C:/TantorData"
 ```
+
+## Module EDI-TDFC 2025
+
+Cette version ajoute un module de génération **INFENT DF EDI-TDFC 2025 de test** :
+
+- page catalogue : `/app/tdfc-2025`
+- prévisualisation d’une déclaration : `/app/declarations/[id]/tdfc-2025`
+- bouton “Générer INFENT DF 2025” sur la fiche déclaration
+- fichier `.edi` téléchargeable depuis la fiche déclaration
+
+Le générateur produit une structure de test avec :
+
+- `UNB` accord d’interchange `PED-DGI-IN-TD2501`
+- `UNG/UNH` version `FD2501`
+- `BGM` document `IDF`
+- `F-IDENTIF` : SIREN, ROF, période, EUR
+- groupes `SEQ/IND` et segments `MOA` pour les formulaires 2050, 2051, 2052
+
+Important : le fichier généré n’est pas homologué DGFiP. Pour la production, il faut un partenaire EDI habilité, une attestation de conformité valide, AUTACK réel et les tests DGFiP.
+
+## Module EDI-TDFC 2025 enrichi
+
+Cette version intègre le dictionnaire éditeurs TDFC 2024-2025 V2025.7 et les fichiers de structure `tdfc25d.edi` / `tdfc25f.edi`.
+
+Pages ajoutées :
+
+- `/app/tdfc-2025` : catalogue de génération INFENT DF de test.
+- `/app/tdfc-2025/dictionnaire` : recherche dans le dictionnaire officiel intégré.
+
+Le fichier généré reste un fichier de test non homologué. La transmission réelle DGFiP nécessite un partenaire EDI habilité, une attestation de conformité et la sécurisation AUTACK.

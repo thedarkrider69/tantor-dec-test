@@ -10,6 +10,8 @@ const clientNav = [
   ["/app/dashboard", "Dashboard"],
   ["/app/entreprises", "Mes Entreprises"],
   ["/app/declarations", "Mes Déclarations"],
+  ["/app/requetes-loc", "Requêtes LOC"],
+  ["/app/tdfc-2025", "EDI-TDFC 2025"],
   ["/app/factures", "Mes factures"],
   ["/app/fichiers", "Mes fichiers"],
   ["/app/compte", "Mon Compte"],

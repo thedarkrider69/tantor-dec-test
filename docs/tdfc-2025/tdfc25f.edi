@@ -1,0 +1,608 @@
+1330CVAE  25   A CVA                                                FLCV
+1330CVAEE 25     CVA                                                FLCV
+1330CVAEPE25     CVA                                                FLCV
+2025A     25     IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2025C     25X    IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2025D     25     IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2026A     25     IDF                        ISRNISRS                BIRNBIRSBIMN
+2026B     25     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2026C     25     IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2026D     25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2026F     25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027A     25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027B     25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027C     25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027D     25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027E     25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027F     25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027G     25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027H     25     IDFILF                     ISRNISRS                BIRNBIRSBIMNBABNBABS
+2028A     25X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2028B     25X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2028C     25X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2028D     25X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2029B     25     IDF                        ISGT
+2029BBIS  25     IDF                        ISGT
+2029E     25X    IDF                        ISGT
+2029F     25X    IDF                        ISGTISGM
+2029G     25X    IDF                        ISGT
+2029H     25X    IDF                        ISGTISGM
+2031      25 RS  IDF                                                BIRNBIRSBIMN
+2031BIS   25  S  IDF                                                BIRNBIRSBIMN
+2033A     25  S  IDFILF                     ISRSISSE                BIRSBISEBIMS
+2033B     25  S  IDFILF                     ISRSISSE                BIRSBISE
+2033B2    25  S  IDFILF                                             BIRSBISE
+2033C     25  S  IDFILF                     ISRSISSE                BIRSBISE
+2033C2    25  S  IDFILF                                             BIRSBISE
+2033D     25     IDFILF                     ISRSISSE                BIRSBISE
+2033D2    25     IDFILF                                             BIRSBISE
+2033E     25  S  IDFILF                     ISRS                    BIRS
+2033F     25     IDFILF                     ISRS                    BIRS
+2033G     25     IDFILF                     ISRS                    BIRS
+2035      25 R   IDF                                                BCDC
+2035A     25     IDFILF                                             BCDC
+2035B     25     IDFILF                                             BCDC
+2035E     25  S  IDFILF                                             BCDC
+2035F     25     IDFILF                                             BCDC
+2035G     25     IDFILF                                             BCDC
+2035SUITE 25  S  IDFILF                                             BCDC
+2036      25 R   IDF                                                BIMNBIMS
+2036BIS   25     IDF                        ISRNISRS                BIRNBIRSBIMN
+2039      25     IDF                        ISRNISRSISGT            BIRNBIRS
+2040TICLC 25X    IDF                        ISRNISRSISGM            BIRN
+2050      25  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2051      25  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2052      25  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2053      25  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2054      25  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2054BIS   25  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2055      25  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2056      25  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2057      25  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2058A     25  S  IDFILF                     ISRN                    BIRNBIMN
+2058A2    25  S  IDF                                                BIRNBIMN
+2058AB    25  S  IDF                        ISGM
+2058B     25  S  IDFILF                     ISRN                    BIRNBIMN
+2058B2    25  S  IDFILF                                             BIRNBIMN
+2058BB    25  S  IDF                        ISGM
+2058C     25  S  IDFILF                     ISRN                    BIRNBIMN
+2058CG    25  S  IDF                        ISGT
+2058DG    25  S  IDFILF                     ISGT
+2058ER    25X S  IDF                        ISGTISGM
+2058ES    25X S  IDF                        ISGTISGM
+2058FC    25  S  IDFILF                     ISGM
+2058RG    25  S  IDFILF                     ISGT
+2058PAP   25X S  IDF                        ISGTISGM
+2058PV    25  S  IDF                        ISGT
+2058SG    25  S  IDF                        ISGT
+2058TS    25  S  IDF                        ISGT
+2059A     25  S  IDFILF                     ISRN                    BIRNBIMN
+2059A2    25  S  IDF                                                BIRNBIMN
+2059B     25  S  IDFILF                     ISRN                    BIRNBIMN
+2059B2    25  S  IDF                                                BIRNBIMN
+2059C     25  S  IDFILF                     ISRN                    BIRNBIMN
+2059D     25  S  IDFILF                     ISRN                    BIRNBIMN
+2059E     25  S  IDFILF                     ISRN                    BIRNBIMNRF72
+2059F     25     IDFILF                     ISRN                    BIRNBIMN
+2059G     25     IDFILF                     ISRN                    BIRNBIMN
+2059H     25     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRF72
+2059I     25     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRF72
+2065      25 RS  IDF                        ISRNISRSISGT
+2065BIS   25  S  IDF                        ISRNISRSISGT
+2065INT   25     IDF                        ISRNISRSISGM            BIRNBIRSRF72           
+2066      25X    IDF                        ISRNISRSISGT 
+2067      25     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+2067BIS   25     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+2069A     25X    IDF                        ISRNISRSISGT            BIRNBIRSBIMNBABNBABS
+2069A12   25X    IDF                        ISRNISRSISGT            BIRNBIRSBIMNBABNBABS
+2069RCI   25X    IDF                        ISRNISRSISGT            BIRNBIRSBIMNBIMSBABNBABSBCDCRFTRRF72
+2072CA5   25X S  IDF                                                RF72
+2072S     25 RS  IDF                                                RF72
+2072SA1   25  S  IDF                                                RF72
+2072SA2   25  S  IDF                                                RF72
+2072E     25  S  IDF                                                RF72
+2079CIOL  25     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDCRF72
+2079CIOP  25     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+2079CIOLPR25     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDCRF72
+2082      25     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+2083      25     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRFTRRF72
+2083M     25     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRFTRRF72
+2139      25 R   IDF                                                BABS
+2139A     25  S  IDFILF                                             BABS
+2139B     25  S  IDFILF                                             BABS
+2139BIS   25  S  IDF                                                BABS
+2139C     25     IDFILF                                             BABS
+2139D     25     IDF                                                BABS
+2139E     25  S  IDFILF                                             BABS
+2139TER   25  S  IDF                                                BABS
+2143      25 R   IDF                                                BABN
+2143VER   25  S  IDF                                                BABN
+2144      25  S  IDFILF                                             BABN
+2145      25  S  IDFILF                                             BABN
+2146      25  S  IDFILF                                             BABN
+2146BIS   25  S  IDFILF                                             BABN
+2147      25  S  IDFILF                                             BABN
+2147BIS   25  S  IDFILF                                             BABN
+2148      25  S  IDFILF                                             BABN
+2149      25  S  IDFILF                                             BABN
+2150      25  S  IDFILF                                             BABN
+2151      25  S  IDFILF                                             BABN
+2151BIS   25  S  IDFILF                                             BABN
+2151TER   25  S  IDFILF                                             BABN
+2152      25  S  IDFILF                                             BABN
+2152BIS   25  S  IDFILF                                             BABN
+2153      25     IDFILF                                             BABN
+2154      25     IDF                                                BABN
+2257      25X  H IPT                        ISRNISRSISGT            BIRNBIRSBIMNBABNBCDCRF72
+2258      25X SI IPP                        ISRNISRSISGT
+2260      25X    IDF                        ISRNISRSISGT
+2463      25     IDF                                ISGT
+2464      25     IDF                        ISRNISRS    ISGM        RF72
+2467      25     IDF                                ISGT
+2468      25     IDF                        ISRNISRS                BIRNBIRS    BABNBABSBCDC
+2903      25X    IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+2904      25     IDF                        ISRNISRS                BIMN
+3030      25   J CRM                        ISRNISRSISGT            BIRNBIRS                BABNBABSBCDC                                  
+ANNEXLIB0125X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0225X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0325X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0425X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0525X    CVAIDFIPT                  ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ATTESTATAA25X  C IATIDF                                             BIRNBIRSBIMNBIMSBABNBABSBCDC
+ATTESTAPEC25     IDF                                                BIRNBIRSBIMNBIMSBABNBABSBCDC
+CA17PROREC25     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA18CHAPAY25     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA19CHAREP25     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA20CHAAVA25     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA21PROAVA25     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CALC219BF425     IDF                        ISRNISRS
+CRMOGA    25  SB CRM                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDC
+DECLOYER  25   Y LOY                                                FLCF
+DEDUCACTIO25     IDF                        ISRNISRS                BIRNBIRS
+DEMAGRECOR25     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+DEMAGREZFU25     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+DRESZONE  25     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+DRESZFUREC25     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+DRESZFUVER25     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+LTENG219B425     IDF                        ISRNISRS
+OPTANC219F25     IDF                        ISRNISRS
+RESCOFIN  25     IDF                        ISRNISRS
+SCIICSUIVI25     IDFILF                     ISRNISRS
+SUIV093REC25     IDFILF                                             BCDC
+SUIV093VER25     IDFILF                                             BCDC
+SUIV219REC25     IDF                        ISRNISRS
+SUIV219VER25     IDF                        ISRNISRS
+SUIV39C   25X    IDF                        ISRNISRS                BIRNBIRSBIMN
+SUIVPVSUIM25X    IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+SUIVPVSUIS25X    IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+ZFCFICHE0125     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+ZFCFICHE0225     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+ZFCFICHE0325     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+F-IDENTIF 25   R CRMCVAIATIDFILFIPTLOYIPP
+OGBNC00   25   D IAA
+OGBNC01   25   D IAA
+OGBNC02   25   D IAA
+OGBNC03   25   D IAA
+OGBNC04   25   D IAA
+OGBNC05   25   D IAA
+OGBNC06   25   D IAA
+OGBNC07   25X  D IAA
+OGBNC08   25   D IAA
+OGID00    25   O IAAICAICG
+OGBIC00   25   E ICG
+OGBIC01   25   E ICG
+OGBIC02   25   E ICG
+OGBIC03   25   E ICG
+OGBIC04   25   E ICG
+OGBIC05   25   E ICG
+OGBA00    25   F ICA
+OGBA01    25   F ICA
+OGBA02    25   F ICA
+OGBA03    25   F ICA
+OGBA04    25   F ICA
+OGBA05    25   F ICA
+OGBA06    25   F ICA
+OGBA07    25   F ICA
+OGBA08    25   F ICA
+1330CVAE  24   A CVA                                                FLCV
+1330CVAEE 24     CVA                                                FLCV
+1330CVAEPE24     CVA                                                FLCV
+2025A     24     IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2025C     24X    IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2025D     24     IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2026A     24     IDF                        ISRNISRS                BIRNBIRSBIMN
+2026B     24     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2026C     24     IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2026D     24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2026F     24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027A     24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027B     24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027C     24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027D     24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027E     24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027F     24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027G     24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027H     24     IDFILF                     ISRNISRS                BIRNBIRSBIMNBABNBABS
+2028A     24X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2028B     24X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2028C     24X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2028D     24X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2029B     24     IDF                        ISGT
+2029BBIS  24     IDF                        ISGT
+2029E     24X    IDF                        ISGT
+2029F     24X    IDF                        ISGTISGM
+2029G     24X    IDF                        ISGT
+2029H     24X    IDF                        ISGTISGM
+2031      24 RS  IDF                                                BIRNBIRSBIMN
+2031BIS   24  S  IDF                                                BIRNBIRSBIMN
+2033A     24  S  IDFILF                     ISRSISSE                BIRSBISEBIMS
+2033B     24  S  IDFILF                     ISRSISSE                BIRSBISE
+2033B2    24  S  IDFILF                                             BIRSBISE
+2033C     24  S  IDFILF                     ISRSISSE                BIRSBISE
+2033C2    24  S  IDFILF                                             BIRSBISE
+2033D     24     IDFILF                     ISRSISSE                BIRSBISE
+2033D2    24     IDFILF                                             BIRSBISE
+2033E     24  S  IDFILF                     ISRS                    BIRS
+2033F     24     IDFILF                     ISRS                    BIRS
+2033G     24     IDFILF                     ISRS                    BIRS
+2035      24 R   IDF                                                BCDC
+2035A     24     IDFILF                                             BCDC
+2035B     24     IDFILF                                             BCDC
+2035E     24  S  IDFILF                                             BCDC
+2035F     24     IDFILF                                             BCDC
+2035G     24     IDFILF                                             BCDC
+2035SUITE 24  S  IDFILF                                             BCDC
+2036      24 R   IDF                                                BIMNBIMS
+2036BIS   24     IDF                        ISRNISRS                BIRNBIRSBIMN
+2039      24     IDF                        ISRNISRSISGT            BIRNBIRS
+2050      24  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2051      24  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2052      24  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2053      24  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2054      24  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2054BIS   24  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2055      24  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2056      24  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2057      24  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2058A     24  S  IDFILF                     ISRN                    BIRNBIMN
+2058A2    24  S  IDF                                                BIRNBIMN
+2058AB    24  S  IDF                        ISGM
+2058B     24  S  IDFILF                     ISRN                    BIRNBIMN
+2058B2    24  S  IDFILF                                             BIRNBIMN
+2058BB    24  S  IDF                        ISGM
+2058C     24  S  IDFILF                     ISRN                    BIRNBIMN
+2058CG    24  S  IDF                        ISGT
+2058DG    24  S  IDFILF                     ISGT
+2058ER    24X S  IDF                        ISGTISGM
+2058ES    24X S  IDF                        ISGTISGM
+2058FC    24  S  IDFILF                     ISGM
+2058RG    24  S  IDFILF                     ISGT
+2058PAP   24X S  IDF                        ISGTISGM
+2058PV    24  S  IDF                        ISGT
+2058SG    24  S  IDF                        ISGT
+2058TS    24  S  IDF                        ISGT
+2059A     24  S  IDFILF                     ISRN                    BIRNBIMN
+2059A2    24  S  IDF                                                BIRNBIMN
+2059B     24  S  IDFILF                     ISRN                    BIRNBIMN
+2059B2    24  S  IDF                                                BIRNBIMN
+2059C     24  S  IDFILF                     ISRN                    BIRNBIMN
+2059D     24  S  IDFILF                     ISRN                    BIRNBIMN
+2059E     24  S  IDFILF                     ISRN                    BIRNBIMNRF72
+2059F     24     IDFILF                     ISRN                    BIRNBIMN
+2059G     24     IDFILF                     ISRN                    BIRNBIMN
+2059H     24     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRF72
+2059I     24     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRF72
+2065      24 RS  IDF                        ISRNISRSISGT
+2065BIS   24  S  IDF                        ISRNISRSISGT
+2066      24X    IDF                        ISRNISRSISGT
+2067      24     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+2067BIS   24     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+2069A     24X    IDF                        ISRNISRSISGT            BIRNBIRSBIMNBABNBABS
+2069A12   24X    IDF                        ISRNISRSISGT            BIRNBIRSBIMNBABNBABS
+2069RCI   24X    IDF                        ISRNISRSISGT            BIRNBIRSBIMNBIMSBABNBABSBCDCRFTRRF72
+2072CA5   24X S  IDF                                                RF72
+2072S     24 RS  IDF                                                RF72
+2072SA1   24  S  IDF                                                RF72
+2072SA2   24  S  IDF                                                RF72
+2072E     24  S  IDF                                                RF72
+2082      24     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+2083      24     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRFTRRF72
+2083M     24     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRFTRRF72
+2139      24 R   IDF                                                BABS
+2139A     24  S  IDFILF                                             BABS
+2139B     24  S  IDFILF                                             BABS
+2139BIS   24  S  IDF                                                BABS
+2139C     24     IDFILF                                             BABS
+2139D     24     IDF                                                BABS
+2139E     24  S  IDFILF                                             BABS
+2139TER   24  S  IDF                                                BABS
+2143      24 R   IDF                                                BABN
+2143VER   24  S  IDF                                                BABN
+2144      24  S  IDFILF                                             BABN
+2145      24  S  IDFILF                                             BABN
+2146      24  S  IDFILF                                             BABN
+2146BIS   24  S  IDFILF                                             BABN
+2147      24  S  IDFILF                                             BABN
+2147BIS   24  S  IDFILF                                             BABN
+2148      24  S  IDFILF                                             BABN
+2149      24  S  IDFILF                                             BABN
+2150      24  S  IDFILF                                             BABN
+2151      24  S  IDFILF                                             BABN
+2151BIS   24  S  IDFILF                                             BABN
+2151TER   24  S  IDFILF                                             BABN
+2152      24  S  IDFILF                                             BABN
+2152BIS   24  S  IDFILF                                             BABN
+2153      24     IDFILF                                             BABN
+2154      24     IDF                                                BABN
+2257      24X  H IPT                        ISRNISRSISGT            BIRNBIRSBIMNBABNBCDCRF72
+2258      24X SI IPP                        ISRNISRSISGT
+2260      24X    IDF                        ISRNISRSISGT
+2463      24     IDF                                ISGT
+2464      24     IDF                        ISRNISRS    ISGM        RF72
+2467      24     IDF                                ISGT
+2468      24     IDF                        ISRNISRS                BIRNBIRS    BABNBABSBCDC
+2903      24X    IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+2904      24     IDF                        ISRNISRS                BIMN
+3030      24   J CRM                        ISRNISRSISGT            BIRNBIRS                BABNBABSBCDC                                  
+ANNEXLIB0124X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0224X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0324X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0424X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0524X    CVAIDFIPT                  ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ATTESTATAA24X  C IATIDF                                             BIRNBIRSBIMNBIMSBABNBABSBCDC
+ATTESTAPEC24     IDF                                                BIRNBIRSBIMNBIMSBABNBABSBCDC
+CA17PROREC24     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA18CHAPAY24     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA19CHAREP24     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA20CHAAVA24     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA21PROAVA24     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CALC219BF424     IDF                        ISRNISRS
+CRMOGA    24  SB CRM                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDC
+DECLOYER  24   Y LOY                                                FLCF
+DEDUCACTIO24     IDF                        ISRNISRS                BIRNBIRS
+DEMAGRECOR24     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+DEMAGREZFU24     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+DRESZONE  24     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+DRESZFUREC24     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+DRESZFUVER24     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+LTENG219B424     IDF                        ISRNISRS
+OPTANC219F24     IDF                        ISRNISRS
+RESCOFIN  24     IDF                        ISRNISRS
+SCIICSUIVI24     IDFILF                     ISRNISRS
+SUIV093REC24     IDFILF                                             BCDC
+SUIV093VER24     IDFILF                                             BCDC
+SUIV219REC24     IDF                        ISRNISRS
+SUIV219VER24     IDF                        ISRNISRS
+SUIV39C   24X    IDF                        ISRNISRS                BIRNBIRSBIMN
+SUIVPVSUIM24X    IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+SUIVPVSUIS24X    IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+ZFCFICHE0124     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+ZFCFICHE0224     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+ZFCFICHE0324     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+F-IDENTIF 24   R CRMCVAIATIDFILFIPTLOYIPP
+OGBNC00   24   D IAA
+OGBNC01   24   D IAA
+OGBNC02   24   D IAA
+OGBNC03   24   D IAA
+OGBNC04   24   D IAA
+OGBNC05   24   D IAA
+OGBNC06   24   D IAA
+OGBNC07   24X  D IAA
+OGBNC08   24   D IAA
+OGID00    24   O IAAICAICG
+OGBIC00   24   E ICG
+OGBIC01   24   E ICG
+OGBIC02   24   E ICG
+OGBIC03   24   E ICG
+OGBIC04   24   E ICG
+OGBIC05   24   E ICG
+OGBA00    24   F ICA
+OGBA01    24   F ICA
+OGBA02    24   F ICA
+OGBA03    24   F ICA
+OGBA04    24   F ICA
+OGBA05    24   F ICA
+OGBA06    24   F ICA
+OGBA07    24   F ICA
+OGBA08    24   F ICA
+1330CVAE  23   A CVA                                                FLCV
+1330CVAEE 23     CVA                                                FLCV
+1330CVAEPE23     CVA                                                FLCV
+2025A     23     IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2025C     23X    IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2025D     23     IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2026A     23     IDF                        ISRNISRS                BIRNBIRSBIMN
+2026B     23     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2026C     23     IDFILF                     ISRNISRS                BIRNBIRSBIMN
+2026D     23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2026F     23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027A     23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027B     23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027C     23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027D     23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027E     23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027F     23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027G     23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+2027H     23     IDFILF                     ISRNISRS                BIRNBIRSBIMNBABNBABS
+2028A     23X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2028B     23X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2028C     23X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2028D     23X    IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+2029B     23     IDF                        ISGT
+2029BBIS  23     IDF                        ISGT
+2029E     23X    IDF                        ISGT
+2029F     23X    IDF                        ISGTISGM
+2029G     23X    IDF                        ISGT
+2029H     23X    IDF                        ISGTISGM
+2031      23 RS  IDF                                                BIRNBIRSBIMN
+2031BIS   23  S  IDF                                                BIRNBIRSBIMN
+2033A     23  S  IDFILF                     ISRSISSE                BIRSBISEBIMS
+2033B     23  S  IDFILF                     ISRSISSE                BIRSBISE
+2033B2    23  S  IDFILF                                             BIRSBISE
+2033C     23  S  IDFILF                     ISRSISSE                BIRSBISE
+2033C2    23  S  IDFILF                                             BIRSBISE
+2033D     23     IDFILF                     ISRSISSE                BIRSBISE
+2033D2    23     IDFILF                                             BIRSBISE
+2033E     23  S  IDFILF                     ISRS                    BIRS
+2033F     23     IDFILF                     ISRS                    BIRS
+2033G     23     IDFILF                     ISRS                    BIRS
+2035      23 R   IDF                                                BCDC
+2035A     23     IDFILF                                             BCDC
+2035B     23     IDFILF                                             BCDC
+2035E     23  S  IDFILF                                             BCDC
+2035F     23     IDFILF                                             BCDC
+2035G     23     IDFILF                                             BCDC
+2035SUITE 23  S  IDFILF                                             BCDC
+2036      23 R   IDF                                                BIMNBIMS
+2036BIS   23     IDF                        ISRNISRS                BIRNBIRSBIMN
+2039      23     IDF                        ISRNISRSISGT            BIRNBIRS
+2050      23  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2051      23  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2052      23  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2053      23  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2054      23  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2054BIS   23  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2055      23  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2056      23  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2057      23  S  IDFILF                     ISRNISNE                BIRNBINEBIMN
+2058A     23  S  IDFILF                     ISRN                    BIRNBIMN
+2058A2    23  S  IDF                                                BIRNBIMN
+2058AB    23  S  IDF                        ISGM
+2058B     23  S  IDFILF                     ISRN                    BIRNBIMN
+2058B2    23  S  IDFILF                                             BIRNBIMN
+2058BB    23  S  IDF                        ISGM
+2058C     23  S  IDFILF                     ISRN                    BIRNBIMN
+2058CG    23  S  IDF                        ISGT
+2058DG    23  S  IDFILF                     ISGT
+2058ER    23X S  IDF                        ISGTISGM
+2058ES    23X S  IDF                        ISGTISGM
+2058FC    23  S  IDFILF                     ISGM
+2058RG    23  S  IDFILF                     ISGT
+2058PAP   23X S  IDF                        ISGTISGM
+2058PV    23  S  IDF                        ISGT
+2058SG    23  S  IDF                        ISGT
+2058TS    23  S  IDF                        ISGT
+2059A     23  S  IDFILF                     ISRN                    BIRNBIMN
+2059A2    23  S  IDF                                                BIRNBIMN
+2059B     23  S  IDFILF                     ISRN                    BIRNBIMN
+2059B2    23  S  IDF                                                BIRNBIMN
+2059C     23  S  IDFILF                     ISRN                    BIRNBIMN
+2059D     23  S  IDFILF                     ISRN                    BIRNBIMN
+2059E     23  S  IDFILF                     ISRN                    BIRNBIMNRF72
+2059F     23     IDFILF                     ISRN                    BIRNBIMN
+2059G     23     IDFILF                     ISRN                    BIRNBIMN
+2059H     23     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRF72
+2059I     23     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRF72
+2065      23 RS  IDF                        ISRNISRSISGT
+2065BIS   23  S  IDF                        ISRNISRSISGT
+2066      23X    IDF                        ISRNISRSISGT
+2067      23     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+2067BIS   23     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+2069A     23X    IDF                        ISRNISRSISGT            BIRNBIRSBIMNBABNBABS
+2069A12   23X    IDF                        ISRNISRSISGT            BIRNBIRSBIMNBABNBABS
+2069RCI   23X    IDF                        ISRNISRSISGT            BIRNBIRSBIMNBIMSBABNBABSBCDCRFTRRF72
+2072CA5   23X S  IDF                                                RF72
+2072S     23 RS  IDF                                                RF72
+2072SA1   23  S  IDF                                                RF72
+2072SA2   23  S  IDF                                                RF72
+2072E     23  S  IDF                                                RF72
+2082      23     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+2083      23     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRFTRRF72
+2083M     23     IDF                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDCRFTRRF72
+2139      23 R   IDF                                                BABS
+2139A     23  S  IDFILF                                             BABS
+2139B     23  S  IDFILF                                             BABS
+2139BIS   23  S  IDF                                                BABS
+2139C     23     IDFILF                                             BABS
+2139D     23     IDF                                                BABS
+2139E     23  S  IDFILF                                             BABS
+2139TER   23  S  IDF                                                BABS
+2143      23 R   IDF                                                BABN
+2143VER   23  S  IDF                                                BABN
+2144      23  S  IDFILF                                             BABN
+2145      23  S  IDFILF                                             BABN
+2146      23  S  IDFILF                                             BABN
+2146BIS   23  S  IDFILF                                             BABN
+2147      23  S  IDFILF                                             BABN
+2147BIS   23  S  IDFILF                                             BABN
+2148      23  S  IDFILF                                             BABN
+2149      23  S  IDFILF                                             BABN
+2150      23  S  IDFILF                                             BABN
+2151      23  S  IDFILF                                             BABN
+2151BIS   23  S  IDFILF                                             BABN
+2151TER   23  S  IDFILF                                             BABN
+2152      23  S  IDFILF                                             BABN
+2152BIS   23  S  IDFILF                                             BABN
+2153      23     IDFILF                                             BABN
+2154      23     IDF                                                BABN
+2257      23X  H IPT                        ISRNISRSISGT            BIRNBIRSBIMNBABNBCDCRF72
+2258      23X SI IPP                        ISRNISRSISGT
+2260      23X    IDF                        ISRNISRSISGT
+2463      23     IDF                                ISGT
+2464      23     IDF                        ISRNISRS    ISGM        RF72
+2467      23     IDF                                ISGT
+2468      23     IDF                        ISRNISRS                BIRNBIRS    BABNBABSBCDC
+2903      23X    IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+2904      23     IDF                        ISRNISRS                BIMN
+3030      23   J CRM                        ISRNISRSISGT            BIRNBIRS                BABNBABSBCDC                                  
+ANNEXLIB0123X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0223X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0323X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0423X    CVAIDFILFIPT               ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ANNEXLIB0523X    CVAIDFIPT                  ISRNISRSISGTISGMISNEISSEBIRNBIRSBINEBISEBIMNBIMSBABNBABSBCDCRFTRRF72FLCV
+ATTESTATAA23X  C IATIDF                                             BIRNBIRSBIMNBIMSBABNBABSBCDC
+ATTESTAPEC23     IDF                                                BIRNBIRSBIMNBIMSBABNBABSBCDC
+CA17PROREC23     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA18CHAPAY23     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA19CHAREP23     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA20CHAAVA23     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CA21PROAVA23     IDFILF                     ISRNISRSISNEISSE        BIRNBIRSBINEBISEBIMNBABNBABSBCDC
+CALC219BF423     IDF                        ISRNISRS
+CRMOGA    23  SB CRM                        ISRNISRS                BIRNBIRSBIMNBIMSBABNBABSBCDC
+DECLOYER  23   Y LOY                                                FLCF
+DEDUCACTIO23     IDF                        ISRNISRS                BIRNBIRS
+DEMAGRECOR23     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+DEMAGREZFU23     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+DRESZONE  23     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+DRESZFUREC23     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+DRESZFUVER23     IDF                        ISRNISRS                BIRNBIRSBIMNBCDC
+LTENG219B423     IDF                        ISRNISRS
+OPTANC219F23     IDF                        ISRNISRS
+RESCOFIN  23     IDF                        ISRNISRS
+SCIICSUIVI23     IDFILF                     ISRNISRS
+SUIV093REC23     IDFILF                                             BCDC
+SUIV093VER23     IDFILF                                             BCDC
+SUIV219REC23     IDF                        ISRNISRS
+SUIV219VER23     IDF                        ISRNISRS
+SUIV39C   23X    IDF                        ISRNISRS                BIRNBIRSBIMN
+SUIVPVSUIM23X    IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+SUIVPVSUIS23X    IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABSBCDC
+ZFCFICHE0123     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+ZFCFICHE0223     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+ZFCFICHE0323     IDF                        ISRNISRS                BIRNBIRSBIMNBABNBABS
+F-IDENTIF 23   R CRMCVAIATIDFILFIPTLOYIPP
+OGBNC00   23   D IAA
+OGBNC01   23   D IAA
+OGBNC02   23   D IAA
+OGBNC03   23   D IAA
+OGBNC04   23   D IAA
+OGBNC05   23   D IAA
+OGBNC06   23   D IAA
+OGBNC07   23X  D IAA
+OGBNC08   23   D IAA
+OGID00    23   O IAAICAICG
+OGBIC00   23   E ICG
+OGBIC01   23   E ICG
+OGBIC02   23   E ICG
+OGBIC03   23   E ICG
+OGBIC04   23   E ICG
+OGBIC05   23   E ICG
+OGBA00    23   F ICA
+OGBA01    23   F ICA
+OGBA02    23   F ICA
+OGBA03    23   F ICA
+OGBA04    23   F ICA
+OGBA05    23   F ICA
+OGBA06    23   F ICA
+OGBA07    23   F ICA
+OGBA08    23   F ICA

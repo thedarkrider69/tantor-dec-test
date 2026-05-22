@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { generateEdiFileAction, sendDeclarationAction, validateDeclarationAction } from "@/lib/actions";
+import { generateEdiFileAction, generateTdfc2025FileAction, sendDeclarationAction, validateDeclarationAction } from "@/lib/actions";
 import { badgeClass, formatDate, formatEuro, statusLabel } from "@/lib/utils";
 
 export default async function DeclarationDetailPage({
@@ -9,7 +9,7 @@ export default async function DeclarationDetailPage({
   searchParams
 }: {
   params: { id: string };
-  searchParams: { saved?: string; error?: string; validated?: string; edi?: string };
+  searchParams: { saved?: string; error?: string; validated?: string; edi?: string; tdfc2025?: string };
 }) {
   const declaration = await prisma.declaration.findUnique({ where: { id: params.id }, include: { company: true, year: true, invoices: true } });
   if (!declaration) notFound();
@@ -34,6 +34,11 @@ export default async function DeclarationDetailPage({
             <input type="hidden" name="declarationId" value={declaration.id} />
             <button className="btn btn-secondary" type="submit">Générer EDI local</button>
           </form>
+          <form action={generateTdfc2025FileAction}>
+            <input type="hidden" name="declarationId" value={declaration.id} />
+            <button className="btn btn-primary" type="submit">Générer INFENT DF 2025</button>
+          </form>
+          <Link className="btn btn-secondary" href={`/app/declarations/${declaration.id}/tdfc-2025`}>Prévisualiser TDFC 2025</Link>
           <form action={sendDeclarationAction}>
             <input type="hidden" name="declarationId" value={declaration.id} />
             <button className="btn btn-primary" type="submit">Envoi simulé</button>
@@ -43,6 +48,7 @@ export default async function DeclarationDetailPage({
       {searchParams.saved && <div className="notice" style={{marginBottom: 16}}>Déclaration sauvegardée et contrôles d'anomalies relancés.</div>}
       {searchParams.validated && <div className="notice" style={{marginBottom: 16}}>Contrôles terminés.</div>}
       {searchParams.edi && <div className="notice" style={{marginBottom: 16}}>Fichier EDI local généré.</div>}
+      {searchParams.tdfc2025 && <div className="notice" style={{marginBottom: 16}}>Fichier INFENT DF EDI-TDFC 2025 de test généré.</div>}
       {searchParams.error && <div className="error" style={{marginBottom: 16}}>{searchParams.error}</div>}
       <div className="kpi-grid">
         <div className="kpi"><span>Référence</span><strong style={{fontSize: 20}}>{declaration.reference}</strong></div>
@@ -77,7 +83,7 @@ export default async function DeclarationDetailPage({
           {declaration.ediContent ? (
             <>
               <p><strong>{declaration.ediFileName}</strong></p>
-              <p className="muted">Généré le {formatDate(declaration.ediGeneratedAt)}. Ce fichier est un fichier local de test, non homologué DGFiP.</p>
+              <p className="muted">Généré le {formatDate(declaration.ediGeneratedAt)}. Ce fichier est un fichier local de test, non homologué DGFiP. Si le nom contient INFENT_DF_TDFC_2025, il utilise la structure EDI-TDFC 2025.</p>
               {declaration.ediFilePath && <p className="muted">Dossier utilisateur : <code>{declaration.ediFilePath}</code></p>}
               {declaration.ediDeclarationPath && <p className="muted">Copie déclaration : <code>{declaration.ediDeclarationPath}</code></p>}
               <Link className="btn btn-secondary" href={`/app/declarations/${declaration.id}/edi`}>Télécharger le fichier .edi</Link>
