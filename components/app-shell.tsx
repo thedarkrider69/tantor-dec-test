@@ -35,7 +35,7 @@ export function AppShell({ user, mode, children }: { user: UserLike; mode: "clie
             <span>Tantor Déc</span>
           </Link>
           <details className="mobile-menu">
-            <summary>Menu</summary>
+            <summary aria-label="Ouvrir le menu">☰</summary>
             <div className="mobile-menu-panel">
               <div className="user-chip mobile-user-chip">
                 <span className="avatar">{mode === "admin" ? "A" : initial}</span>

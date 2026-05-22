@@ -24,7 +24,7 @@ export function PublicHeader() {
           <Link className="btn btn-primary" href="/register">Créer un compte</Link>
         </div>
         <details className="public-mobile-menu">
-          <summary>Menu</summary>
+          <summary aria-label="Ouvrir le menu">☰</summary>
           <div className="public-mobile-panel">
             {links.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
             <Link className="btn btn-secondary" href="/login">Connexion</Link>

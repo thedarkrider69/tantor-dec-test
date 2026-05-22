@@ -234,3 +234,126 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
   .content { padding: 16px 12px 24px; }
   .page-title h1, .page-title h2 { font-size: 30px !important; }
 }
+
+/* Mobile drawer menu: left slide with translucent background */
+@media (max-width: 980px) {
+  .public-mobile-menu,
+  .mobile-menu {
+    position: static;
+  }
+
+  .public-mobile-menu summary,
+  .mobile-menu summary {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    line-height: 1;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .92);
+    color: #101828;
+    border: 1px solid rgba(228, 231, 236, .9);
+    box-shadow: 0 10px 24px rgba(16, 24, 40, .10);
+  }
+
+  .mobile-menu summary {
+    background: rgba(255,255,255,.94);
+    color: #0b1220;
+  }
+
+  .public-mobile-menu[open]::before,
+  .mobile-menu[open]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 58;
+    background: rgba(16, 24, 40, .28);
+    backdrop-filter: blur(2px);
+  }
+
+  .public-mobile-panel,
+  .mobile-menu-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: auto;
+    width: min(340px, 82vw);
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow-y: auto;
+    border-radius: 0 24px 24px 0;
+    padding: 22px 16px;
+    z-index: 70;
+    animation: drawerSlideIn .24s ease-out;
+  }
+
+  .public-mobile-panel {
+    background: rgba(255, 255, 255, .82);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,.62);
+    border-left: 0;
+    backdrop-filter: blur(18px);
+    box-shadow: 18px 0 40px rgba(16, 24, 40, .20);
+    align-content: start;
+  }
+
+  .mobile-menu-panel {
+    background: rgba(11, 18, 32, .82);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.16);
+    border-left: 0;
+    backdrop-filter: blur(18px);
+    box-shadow: 18px 0 44px rgba(0, 0, 0, .28);
+    align-content: start;
+  }
+
+  .public-mobile-panel::before,
+  .mobile-menu-panel::before {
+    content: "Tantor Déc";
+    display: block;
+    font-weight: 900;
+    font-size: 18px;
+    padding: 4px 8px 14px;
+    margin-bottom: 4px;
+  }
+
+  .mobile-menu-panel .side-link,
+  .public-mobile-panel a:not(.btn) {
+    border-radius: 14px;
+    padding: 13px 14px;
+  }
+
+  .mobile-menu-panel .side-link {
+    color: rgba(255,255,255,.88);
+    background: rgba(255,255,255,.06);
+  }
+
+  .mobile-menu-panel .side-link:hover {
+    background: rgba(255,255,255,.14);
+    color: #fff;
+  }
+
+  .public-mobile-panel a:not(.btn) {
+    color: #344054;
+    background: rgba(255,255,255,.38);
+  }
+
+  .public-mobile-panel a:not(.btn):hover {
+    background: rgba(238, 244, 255, .92);
+  }
+}
+
+@keyframes drawerSlideIn {
+  from { transform: translateX(-105%); opacity: .72; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .public-mobile-panel,
+  .mobile-menu-panel {
+    width: min(330px, 86vw);
+    border-radius: 0 20px 20px 0;
+  }
+}
