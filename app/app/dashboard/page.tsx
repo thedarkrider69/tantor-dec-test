@@ -1,84 +1,12 @@
 import Link from "next/link";
-import { prisma } from "@/lib/prisma";
-import { requireUser, getOrganizationId } from "@/lib/auth";
-import { badgeClass, formatDate, statusLabel } from "@/lib/utils";
+import { Banner, EmptyState, PageHeader, StatCard, Status, TableShell } from "@/components/ui";
 
-export default async function DashboardPage() {
-  const user = await requireUser();
-  const organizationId = getOrganizationId(user);
-  const [companies, declarations, invoices, activities] = await Promise.all([
-    organizationId ? prisma.company.findMany({ where: { organizationId } }) : [],
-    organizationId ? prisma.declaration.findMany({ where: { company: { organizationId } }, include: { company: true }, orderBy: { createdAt: "desc" }, take: 5 }) : [],
-    organizationId ? prisma.invoice.findMany({ where: { organizationId }, orderBy: { issuedAt: "desc" } }) : [],
-    prisma.activityLog.findMany({ where: { userId: user.id }, orderBy: { createdAt: "desc" }, take: 5 })
-  ]);
-
-  const pending = declarations.filter(d => ["TO_COMPLETE", "PROCESSING"].includes(d.status)).length;
-  const completed = declarations.filter(d => ["SENT", "ACCEPTED"].includes(d.status)).length;
-
-  return (
-    <>
-      <div className="page-title">
-        <div>
-          <h1 style={{fontSize: 38, margin: 0}}>Dashboard</h1>
-          <p>Bienvenue sur votre compte Tantor Déc.</p>
-        </div>
-        <Link className="btn btn-primary" href="/app/declarations/nouvelle">Ajouter une déclaration</Link>
-      </div>
-      <div className="page-banner">
-        <div>
-          <h3>Déclarations EDI disponibles</h3>
-          <p>Nous prenons en charge les principaux formulaires fiscaux selon le millésime en vigueur.</p>
-        </div>
-        <details>
-          <summary className="btn">Voir les EDI supportés</summary>
-          <div className="card" style={{position: "absolute", right: 28, marginTop: 12, maxWidth: 520, zIndex: 2}}>
-            <h3>Types de déclarations prises en charge</h3>
-            <ul className="clean">
-              <li>IS – Réel Simplifié : 2033A à 2033G + 2065</li>
-              <li>IS – Réel Normal : 2050 à 2059G + 2065</li>
-              <li>BIC, BNC, SCI, SCM, BA</li>
-              <li>TVA CA3, CA12, CVAE et déclarations associées</li>
-            </ul>
-          </div>
-        </details>
-      </div>
-      <div className="kpi-grid">
-        <div className="kpi"><span>Total Déclarations</span><strong>{declarations.length}</strong><p>+2 ce mois-ci</p></div>
-        <div className="kpi"><span>Entreprises</span><strong>{companies.length}</strong><p>Actives</p></div>
-        <div className="kpi"><span>En attente</span><strong>{pending}</strong><p>À traiter</p></div>
-        <div className="kpi"><span>Complétées</span><strong>{completed}</strong><p>Ce mois-ci</p></div>
-      </div>
-      <div className="two-col">
-        <div className="card">
-          <h3>Guide de démarrage</h3>
-          <p>Suivez ces étapes simples pour commencer à utiliser Tantor Déc.</p>
-          <ul className="clean">
-            <li>Ajouter votre entreprise <Link href="/app/entreprises/nouvelle"><strong>Ajouter maintenant</strong></Link></li>
-            <li>Enregistrer l'exercice <Link href="/app/declarations"><strong>Enregistrer</strong></Link></li>
-            <li>Remplir la liasse fiscale <Link href="/app/declarations/nouvelle"><strong>Remplir</strong></Link></li>
-          </ul>
-        </div>
-        <div className="card">
-          <h3>Statut des Déclarations</h3>
-          <ul className="clean">
-            <li>À compléter : {declarations.filter(d => d.status === "TO_COMPLETE").length}</li>
-            <li>Envoyées : {declarations.filter(d => d.status === "SENT").length}</li>
-            <li>Reçues – Acceptées : {declarations.filter(d => d.status === "ACCEPTED").length}</li>
-            <li>Refusées : {declarations.filter(d => d.status === "REJECTED").length}</li>
-          </ul>
-        </div>
-      </div>
-      <div className="grid-2" style={{marginTop: 18}}>
-        <div className="card">
-          <h3>Activité récente</h3>
-          {activities.length ? activities.map(a => <p key={a.id}><strong>{a.label}</strong><br />{a.detail} — {formatDate(a.createdAt)}</p>) : <p>Aucune activité récente.</p>}
-        </div>
-        <div className="card">
-          <h3>Dernières déclarations</h3>
-          {declarations.length ? declarations.map(d => <p key={d.id}><Link href={`/app/declarations/${d.id}`}><strong>{d.type}</strong></Link><br />{d.company.name} — <span className={badgeClass(d.status)}>{statusLabel(d.status)}</span></p>) : <p>Aucune déclaration disponible.</p>}
-        </div>
-      </div>
-    </>
-  );
+export default function DashboardPage(){
+  return <>
+    <PageHeader title="Tableau de bord" subtitle="Suivez vos entreprises, déclarations et activités récentes." action={<Link className="btn btn-primary" href="/app/entreprises/nouvelle">Ajouter une entreprise</Link>} />
+    <Banner title="Déclarations EDI disponibles" action={<button className="btn btn-secondary">Voir les EDI supportés</button>}>Consultez les modèles configurés par l’administrateur : IS, impôt sur le revenu, bénéfices agricoles et intégration fiscale.</Banner>
+    <div className="grid-4"><StatCard label="Déclarations" value="12" hint="Total"/><StatCard label="Entreprises actives" value="3" hint="Enregistrées"/><StatCard label="En attente" value="4" hint="À compléter"/><StatCard label="Complétées" value="8" hint="Terminées"/></div>
+    <div className="grid-2"><div className="card"><h2>Guide de démarrage</h2><div className="grid-3"><Link className="btn btn-secondary" href="/app/entreprises/nouvelle">1. Ajouter une entreprise</Link><Link className="btn btn-secondary" href="/app/declarations">2. Enregistrer un exercice</Link><Link className="btn btn-secondary" href="/app/declarations/nouvelle">3. Créer une déclaration</Link></div></div><div className="card"><h2>Statut global</h2><TableShell headers={["État","Nombre"]} rows={[[<Status tone="yellow">À compléter</Status>,"4"],[<Status tone="blue">Envoyée</Status>,"2"],[<Status tone="green">Acceptée</Status>,"6"],[<Status tone="red">Refusée</Status>,"0"]]} /></div></div>
+    <div className="card"><h2>Activité récente</h2><TableShell headers={["Action","Entreprise","Statut"]} rows={[["Déclaration 2065 créée","ALPHA CONSULTING",<Status tone="yellow">À compléter</Status>],["FEC importé","BETA SERVICES",<Status tone="green">Disponible</Status>],["Paiement validé","OMEGA SAS",<Status tone="green">Payé</Status>]]}/></div>
+  </>
 }

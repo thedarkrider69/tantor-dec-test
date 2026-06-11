@@ -1,30 +1,3 @@
 import Link from "next/link";
-import { prisma } from "@/lib/prisma";
-import { createDeclarationAction } from "@/lib/actions";
-import { getOrganizationId, requireUser } from "@/lib/auth";
-import { formatDate } from "@/lib/utils";
-
-export default async function NewDeclarationPage({ searchParams }: { searchParams: { error?: string } }) {
-  const user = await requireUser();
-  const organizationId = getOrganizationId(user);
-  const companies = organizationId ? await prisma.company.findMany({ where: { organizationId }, include: { fiscalYears: true } }) : [];
-  return (
-    <>
-      <div className="page-title">
-        <div><Link href="/app/declarations">Retour</Link><h1 style={{fontSize: 38, margin: 0}}>Ajouter une déclaration</h1><p>Créez une déclaration fiscale pour une entreprise.</p></div>
-      </div>
-      <form className="card form" action={createDeclarationAction}>
-        {searchParams.error && <div className="error">{searchParams.error}</div>}
-        <div className="form-grid">
-          <label className="label">Entreprise concernée *<select name="companyId" className="select" required><option value="">Choisir une entreprise</option>{companies.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
-          <label className="label">Exercice lié<select name="fiscalYearId" className="select"><option value="">Pas applicable</option>{companies.flatMap(c => c.fiscalYears.map(y => <option key={y.id} value={y.id}>{c.name} — {formatDate(y.startDate)} - {formatDate(y.endDate)}</option>))}</select></label>
-          <label className="label">Année fiscale<input name="fiscalYear" className="input" type="number" defaultValue={2024} /></label>
-          <label className="label">Type de déclaration<select name="type" className="select"><option>Liasse 2065 - IS - BIC</option><option>Liasse 2031 + 2033</option><option>Liasse 2035</option><option>CA3 TVA</option><option>CA12 TVA</option></select></label>
-          <label className="label">Date d'échéance<input name="dueDate" className="input" type="date" /></label>
-          <label className="label">Montant à payer<input name="amount" className="input" type="number" defaultValue={49} /></label>
-        </div>
-        <div className="actions"><Link className="btn btn-secondary" href="/app/declarations">Annuler</Link><button className="btn btn-primary" type="submit">Ajouter la déclaration</button></div>
-      </form>
-    </>
-  );
-}
+import { PageHeader, Status } from "@/components/ui";
+export default function NouvelleDeclaration(){return <><PageHeader title="Ajouter une déclaration" subtitle="Choisissez l’entreprise, l’exercice disponible et le type de déclaration compatible."/><div className="card form-grid"><h2>1. Entreprise concernée</h2><div className="field"><label>Entreprise</label><select><option>ALPHA CONSULTING — SIREN 948123456 — IS — TVA réel simplifié</option></select></div><h2>2. Exercices disponibles</h2><div className="table-wrap"><table><tbody><tr><td>01/01/2024 - 31/12/2024</td><td><Status tone="green">Ouvert</Status></td><td><Status tone="neutral">Aucune déclaration</Status></td></tr><tr><td>01/01/2023 - 31/12/2023</td><td><Status tone="neutral">Déclaration existante</Status></td><td>Grisé</td></tr></tbody></table></div><h2>3. Type de déclaration</h2><div className="field"><label>Type EDI compatible</label><select><option>Impôt sur les sociétés — 2065 : Déclaration de résultat IS</option><option>TVA — CA3</option><option>CVAE</option></select></div><div className="tabs"><Link className="btn btn-primary" href="/app/declarations/demo">Continuer vers la déclaration</Link><Link className="btn btn-secondary" href="/app/declarations">Annuler</Link></div></div></>}

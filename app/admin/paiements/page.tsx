@@ -1,14 +1,2 @@
-import { prisma } from "@/lib/prisma";
-import { badgeClass, formatDate, formatEuro, statusLabel } from "@/lib/utils";
-
-export default async function AdminPaymentsPage() {
-  const invoices = await prisma.invoice.findMany({ include: { declaration: { include: { company: true } }, payment: true }, orderBy: { issuedAt: "desc" } });
-  return (
-    <>
-      <div className="page-title"><div><h1 style={{fontSize: 38, margin: 0}}>Paiements & Factures</h1><p>Consultez, validez et suivez toutes les transactions et factures.</p></div><button className="btn btn-secondary">Exporter</button></div>
-      <div className="table-wrap"><table><thead><tr><th>Facture N°</th><th>Entreprise</th><th>Utilisateur</th><th>Montant</th><th>Statut</th><th>Date de génération</th><th>Référence paiement</th></tr></thead><tbody>
-        {invoices.map(i => <tr key={i.id}><td>{i.number}</td><td>{i.declaration?.company.name ?? "-"}</td><td>-</td><td>{formatEuro(i.amountTtc)}</td><td><span className={badgeClass(i.status)}>{statusLabel(i.status)}</span></td><td>{formatDate(i.issuedAt)}</td><td>{i.payment?.reference ?? "-"}</td></tr>)}
-      </tbody></table></div>
-    </>
-  );
-}
+import { PageHeader, Status, TableShell } from "@/components/ui";
+export default function PaiementsAdmin(){return <><PageHeader title="Gestion des Paiements et Factures" subtitle="Suivi centralisé des transactions, factures, partenaires et statuts." action={<button className="btn btn-primary">Exporter</button>} /><div className="filters"><input placeholder="Entreprise, SIREN, partenaire, utilisateur"/><select><option>Type de déclaration</option></select><select><option>Statut paiement</option></select><select><option>Partenaire</option></select><input type="date"/><input type="date"/></div><div className="card"><TableShell headers={["Facture N°","Entreprise","Utilisateur","Partenaire","Montant","Statut","Date génération","Actions"]} rows={[["FAC-2026-001","ALPHA CONSULTING","Marie Dupont","Non","90 €",<Status tone="green">Payée</Status>,"11/06/2026","Voir · Télécharger · Avoir"],["FAC-2026-002","Cabinet X","Partenaire","Oui","1 200 €",<Status tone="yellow">En attente</Status>,"31/05/2026","Voir · Télécharger"]]}/></div></>}

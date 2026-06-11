@@ -1,24 +1,2 @@
-import { prisma } from "@/lib/prisma";
-import { supportTicketAction } from "@/lib/actions";
-
-export default async function HelpPage({ searchParams }: { searchParams: { sent?: string } }) {
-  const articles = await prisma.helpArticle.findMany({ orderBy: { createdAt: "desc" } });
-  return (
-    <>
-      <div className="page-title"><div><h1 style={{fontSize: 38, margin: 0}}>Aide & Documentation</h1><p>Consultez les guides ou contactez l'assistance.</p></div></div>
-      {searchParams.sent && <div className="notice" style={{marginBottom: 16}}>Votre demande a bien été envoyée.</div>}
-      <div className="grid-3">
-        {articles.map(article => <div className="card" key={article.id}><h3>{article.title}</h3><p>{article.description}</p><button className="btn btn-secondary" type="button">{article.type === "Vidéo" ? "Regarder la vidéo" : "Lire le manuel"}</button></div>)}
-      </div>
-      <div className="grid-2" style={{marginTop: 18}}>
-        <div className="card"><h3>Contact direct</h3><p>Vous préférez nous appeler ?</p><p><strong>+33 1 23 45 67 89</strong><br />support@tantordec.fr</p></div>
-        <form className="card form" action={supportTicketAction}>
-          <h3>Formulaire de contact</h3>
-          <label className="label">Sujet<input name="subject" className="input" placeholder="Votre sujet" required /></label>
-          <label className="label">Message<textarea name="message" className="textarea" placeholder="Votre message" required /></label>
-          <button className="btn btn-primary" type="submit">Envoyer ma demande</button>
-        </form>
-      </div>
-    </>
-  );
-}
+import { PageHeader } from "@/components/ui";
+export default function Aide(){return <><PageHeader title="Aide" subtitle="Consultez les guides et contactez l’équipe Tantor Déc."/><div className="tabs"><span className="tab active">Aide & Documentation</span><span className="tab">Nous contacter</span></div><div className="grid-3"><article className="card"><h2>Importer un FEC</h2><p>Manuel PDF pour comprendre le format attendu, les colonnes et les erreurs possibles.</p><button className="btn btn-secondary">Lire le manuel</button></article><article className="card"><h2>Créer une déclaration</h2><p>Vidéo courte pour sélectionner l’entreprise, l’exercice et le modèle fiscal.</p><button className="btn btn-secondary">Regarder la vidéo</button></article><article className="card"><h2>Corriger les anomalies</h2><p>Guide pratique pour naviguer entre les anomalies et les cases concernées.</p><button className="btn btn-secondary">Lire le manuel</button></article></div><div className="grid-2"><div className="card"><h2>Contact direct</h2><p><strong>Téléphone :</strong> 01 00 00 00 00<br/><strong>Email :</strong> support@tantordec.fr</p></div><form className="card form-grid"><h2>Formulaire de contact</h2><div className="field"><label>Sujet</label><input /></div><div className="field"><label>Message</label><textarea /></div><button className="btn btn-primary">Envoyer ma demande</button></form></div></>}

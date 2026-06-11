@@ -1,21 +1,2 @@
-import Link from "next/link";
-import { prisma } from "@/lib/prisma";
-import { getOrganizationId, requireUser } from "@/lib/auth";
-import { badgeClass, formatDate, formatEuro, statusLabel } from "@/lib/utils";
-
-export default async function InvoicesPage({ searchParams }: { searchParams: { paid?: string } }) {
-  const user = await requireUser();
-  const organizationId = getOrganizationId(user);
-  const invoices = organizationId ? await prisma.invoice.findMany({ where: { organizationId }, include: { declaration: { include: { company: true } }, payment: true }, orderBy: { issuedAt: "desc" } }) : [];
-  return (
-    <>
-      <div className="page-title"><div><h1 style={{fontSize: 38, margin: 0}}>Mes factures</h1><p>Consultez et téléchargez vos factures de déclaration.</p></div></div>
-      {searchParams.paid && <div className="notice" style={{marginBottom: 16}}>Paiement effectué avec succès. Votre déclaration a été acceptée dans cette version de démonstration.</div>}
-      {invoices.length === 0 ? <div className="card"><h3>Aucune facture disponible</h3><p>Une facture est créée automatiquement après chaque déclaration payée.</p><Link className="btn btn-primary" href="/app/declarations">Voir les déclarations</Link></div> : (
-        <div className="table-wrap"><table><thead><tr><th>Date</th><th>Entreprise</th><th>N° facture</th><th>Montant TTC</th><th>État</th><th>Action</th></tr></thead><tbody>
-          {invoices.map(i => <tr key={i.id}><td>{formatDate(i.issuedAt)}</td><td>{i.declaration?.company.name ?? "-"}</td><td>{i.number}</td><td>{formatEuro(i.amountTtc)}</td><td><span className={badgeClass(i.status)}>{statusLabel(i.status)}</span></td><td><Link className="btn btn-secondary" href={`/app/factures/${i.id}`}>Voir</Link></td></tr>)}
-        </tbody></table></div>
-      )}
-    </>
-  );
-}
+import { EmptyState, PageHeader, TableShell } from "@/components/ui";
+export default function Factures(){return <><PageHeader title="Mes Factures" subtitle="Retrouvez toutes les factures liées aux déclarations fiscales."/><div className="filters"><input placeholder="Entreprise ou SIREN"/><select><option>Entreprise</option><option>ALPHA CONSULTING</option></select><select><option>Période de l’exercice</option><option>2024</option></select></div><div className="card"><TableShell headers={["Date","Nom de l’entreprise","N° facture","Montant TTC","Action"]} rows={[["11/06/2026","ALPHA CONSULTING","FAC-2026-001","90,00 €","Télécharger"],["31/05/2026","BETA SERVICES","FAC-2026-002","180,00 €","Télécharger"]]}/></div></>}

@@ -1,13 +1,2 @@
-import { prisma } from "@/lib/prisma";
-
-export default async function AdminCompaniesPage() {
-  const companies = await prisma.company.findMany({ include: { organization: true }, orderBy: { createdAt: "desc" } });
-  return (
-    <>
-      <div className="page-title"><div><h1 style={{fontSize: 38, margin: 0}}>Entreprises</h1><p>Consultez toutes les entreprises inscrites sur la plateforme.</p></div></div>
-      <div className="table-wrap"><table><thead><tr><th>Entreprise</th><th>SIREN</th><th>Forme juridique</th><th>Régime fiscal</th><th>Organisation</th><th>Adresse</th></tr></thead><tbody>
-        {companies.map(c => <tr key={c.id}><td>{c.name}</td><td>{c.siren}</td><td>{c.legalForm}</td><td>{c.taxRegime}</td><td>{c.organization.name}</td><td>{c.address}</td></tr>)}
-      </tbody></table></div>
-    </>
-  );
-}
+import { PageHeader, TableShell } from "@/components/ui";
+export default function AdminEntreprises(){return <><PageHeader title="Administration — Gestion des Entreprises" subtitle="Visualisez les entreprises créées par les utilisateurs et leurs paramètres fiscaux."/><div className="filters"><input placeholder="Nom ou SIREN"/><select><option>Forme juridique</option></select><select><option>Régime fiscal</option></select><select><option>Pays</option></select></div><div className="grid-3">{["ALPHA CONSULTING","BETA SERVICES","OMEGA SAS"].map(n=><article className="card" key={n}><h2>{n}</h2><p><strong>SIREN :</strong> 948123456<br/><strong>Forme :</strong> SAS<br/><strong>Régime fiscal :</strong> IS<br/><strong>TVA :</strong> Réel normal<br/><strong>Adresse :</strong> 10 rue Victor Hugo, Paris<br/><strong>Représentant :</strong> Marie Dupont · marie@example.fr · 0600000000</p></article>)}</div></>}

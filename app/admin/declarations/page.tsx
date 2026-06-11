@@ -1,21 +1,2 @@
-import Link from "next/link";
-import { prisma } from "@/lib/prisma";
-import { badgeClass, formatDate, formatEuro, statusLabel } from "@/lib/utils";
-
-export default async function AdminDeclarationsPage() {
-  const declarations = await prisma.declaration.findMany({ include: { company: true }, orderBy: { createdAt: "desc" } });
-  return (
-    <>
-      <div className="page-title"><div><h1 style={{fontSize: 38, margin: 0}}>Déclarations</h1><p>Gestion des modèles, types de déclaration et déclarations soumises.</p></div><button className="btn btn-primary">Créer un nouveau modèle</button></div>
-      <div className="page-banner"><div><h3>Gestion des modèles</h3><p>Créez les types, documents PDF, champs, formules et règles d’anomalie comme prévu dans le cahier des charges.</p></div><button className="btn">Ajouter un type</button></div>
-      <div className="grid-3" style={{marginBottom: 18}}>
-        <div className="card"><h3>Modèles de déclaration</h3><p>Créez et configurez les formulaires PDF, champs et règles.</p><button className="btn btn-secondary">Voir les modèles</button></div>
-        <div className="card"><h3>Types de déclaration</h3><p>TVA, IS, CET, revenus personnels et déclarations sociales.</p><button className="btn btn-secondary">Ajouter un type</button></div>
-        <div className="card"><h3>Règles d'anomalie</h3><p>Paramétrez les contrôles : champs obligatoires, égalités, seuils.</p><button className="btn btn-secondary">Créer une règle</button></div>
-      </div>
-      <div className="table-wrap"><table><thead><tr><th>Numéro</th><th>Entreprise</th><th>Type</th><th>Statut</th><th>Date envoi</th><th>Montant</th><th>Actions</th></tr></thead><tbody>
-        {declarations.map(d => <tr key={d.id}><td>{d.reference}</td><td>{d.company.name}</td><td>{d.type}</td><td><span className={badgeClass(d.status)}>{statusLabel(d.status)}</span></td><td>{formatDate(d.sentAt)}</td><td>{formatEuro(d.amount)}</td><td><Link href={`/app/declarations/${d.id}`}>Voir</Link></td></tr>)}
-      </tbody></table></div>
-    </>
-  );
-}
+import { PageHeader, Status, TableShell } from "@/components/ui";
+export default function AdminDeclarations(){return <><PageHeader title="Gestion des déclarations" subtitle="Gérez les types, les modèles, les documents et les règles d’anomalie." action={<button className="btn btn-primary">Créer un nouveau type</button>} /><div className="tabs"><span className="tab active">Types de déclaration</span><span className="tab">Modèles de déclaration</span><span className="tab">Documents du modèle</span><span className="tab">Règles d’anomalie</span></div><div className="grid-2"><div className="card"><h2>Types de déclaration</h2><TableShell headers={["Nom","Description","Modèles liés","Action"]} rows={[["TVA","Déclarations CA3 / CA12","4","Modifier"],["Impôt sur les sociétés","Liasses 2065, 2050, 2051","8","Modifier"],["CVAE","Déclarations CVAE","2","Modifier"]]}/></div><div className="card"><h2>Modèles de déclaration</h2><TableShell headers={["Modèle","Type","Prix","Formulaires","Statut"]} rows={[["2065 — Déclaration IS","Impôt sur les sociétés","75 €","8",<Status tone="green">Actif</Status>],["CA3 mensuelle","TVA","49,99 €","3",<Status tone="green">Actif</Status>]]}/></div></div><div className="card"><h2>Paramétrage des champs</h2><TableShell headers={["Cellule","Type de champ","Source","Règle","Anomalie"]} rows={[["AA","Formule","Document","=AB+AC+AD","Total actif incorrect"],["AH","Champ FEC","Comptes 207000-207999","Somme","Obligatoire si actif déclaré"],["Nom entreprise","Automatique","Entreprise","Verrouillé","—"]]}/></div></>}
