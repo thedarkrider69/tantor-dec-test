@@ -17,6 +17,12 @@ export default async function DeclarationsPage() {
         <div><h1 style={{fontSize: 38, margin: 0}}>Mes Déclarations</h1><p>Déposez vos déclarations EDI pour chaque entreprise enregistrée.</p></div>
         <Link className="btn btn-primary" href="/app/declarations/nouvelle">Ajouter une déclaration</Link>
       </div>
+      <div className="page-banner">
+        <div><h3>Gérez vos déclarations fiscales</h3><p>Créez vos exercices, suivez vos déclarations existantes et anticipez les prochaines échéances.</p></div>
+        <Link className="btn" href="/app/declarations/nouvelle">Ajouter une déclaration</Link>
+      </div>
+      <div className="tabs"><span className="tab active">Exercices comptables</span><span className="tab">Mes déclarations</span><span className="tab">Déclarations à venir</span></div>
+      <div className="filters"><select className="select"><option>Toutes les entreprises</option></select><select className="select"><option>Toutes les périodes</option></select><select className="select"><option>Tous les régimes</option></select><select className="select"><option>Toutes les déclarations</option></select></div>
       <div className="grid-2">
         <div className="card">
           <h3>Ajouter un exercice comptable</h3>

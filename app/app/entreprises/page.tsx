@@ -16,6 +16,14 @@ export default async function CompaniesPage() {
         </div>
         <Link className="btn btn-primary" href="/app/entreprises/nouvelle">Ajouter une entreprise</Link>
       </div>
+      <div className="page-banner">
+        <div>
+          <h3>{companies.length === 0 ? "Enregistrez votre première entreprise" : "Gérez vos entreprises"}</h3>
+          <p>Commencez par ajouter une entreprise grâce à son numéro SIREN. Les informations peuvent ensuite être complétées.</p>
+        </div>
+        <Link className="btn" href="/app/entreprises/nouvelle">Ajouter une entreprise</Link>
+      </div>
+      {companies.length > 0 && <div className="filters"><input className="input" placeholder="Rechercher une entreprise par nom ou numéro SIREN..." /><select className="select"><option>Toutes les formes</option></select><select className="select"><option>Tous les régimes</option></select><select className="select"><option>Tous les pays</option></select></div>}
       {companies.length === 0 ? (
         <div className="card">
           <h3>Aucune entreprise enregistrée</h3>
@@ -32,10 +40,12 @@ export default async function CompaniesPage() {
               <p><strong>Régime fiscal :</strong> {company.taxRegime}</p>
               <p><strong>Régime TVA :</strong> {company.vatRegime}</p>
               <p><strong>Date de clôture :</strong> {company.closingDate}</p>
-              <p>{company.address}</p>
+              <p><strong>Adresse :</strong><br />{company.address || "Adresse non renseignée"}</p>
+              <p><strong>Représentant légal :</strong><br />{company.representative || "Non renseigné"}</p>
               <div className="actions">
-                <Link className="btn btn-secondary" href={`/app/declarations?company=${company.id}`}>Déclarations</Link>
-                <Link className="btn btn-secondary" href={`/app/entreprises/${company.id}/comptabilite`}>Comptabilité</Link>
+                <button className="btn btn-danger" type="button">Supprimer</button>
+                <button className="btn btn-secondary" type="button">Modifier</button>
+                <Link className="btn btn-primary" href={`/app/entreprises/${company.id}/comptabilite`}>Comptabilité</Link>
               </div>
             </div>
           ))}

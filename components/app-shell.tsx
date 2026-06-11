@@ -12,6 +12,7 @@ const clientNav = [
   ["/app/declarations", "Mes Déclarations"],
   ["/app/requetes-loc", "Requêtes LOC"],
   ["/app/tdfc-2025", "EDI-TDFC 2025"],
+  ["/app/previsionnel", "Prévisionnel"],
   ["/app/factures", "Mes factures"],
   ["/app/fichiers", "Mes fichiers"],
   ["/app/compte", "Mon Compte"],
@@ -24,7 +25,8 @@ const adminNav = [
   ["/admin/entreprises", "Entreprises"],
   ["/admin/utilisateurs", "Utilisateurs"],
   ["/admin/paiements", "Paiements & Factures"],
-  ["/admin/support", "Assistance utilisateur"]
+  ["/admin/support", "Assistance utilisateur"],
+  ["/admin/cgv", "CGV"]
 ];
 
 export function AppShell({ user, mode, children }: { user: UserLike; mode: "client" | "admin"; children: React.ReactNode }) {
@@ -98,7 +100,7 @@ export function AppShell({ user, mode, children }: { user: UserLike; mode: "clie
       <main className="main">
         <div className="topbar">
           <strong>{mode === "admin" ? "Administration" : "Espace client"}</strong>
-          <span className="badge">{mode === "admin" ? "Back-office" : "MVP test"}</span>
+          <span className="badge">{mode === "admin" ? "Back-office" : "Espace sécurisé"}</span>
         </div>
         <div className="content">{children}</div>
       </main>

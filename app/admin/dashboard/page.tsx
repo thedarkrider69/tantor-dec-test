@@ -14,6 +14,7 @@ export default async function AdminDashboardPage() {
   return (
     <>
       <div className="page-title"><div><h1 style={{fontSize: 38, margin: 0}}>Tableau de bord</h1><p>Vue d'ensemble de votre plateforme Tantor Déc.</p></div></div>
+      <div className="page-banner"><div><h3>Tableau de bord administrateur</h3><p>Suivez l’activité globale, les alertes système, les paiements et les déclarations transmises.</p></div></div>
       <div className="kpi-grid">
         <div className="kpi"><span>Déclarations</span><strong>{declarations}</strong><p>Déclarations soumises</p></div>
         <div className="kpi"><span>Entreprises</span><strong>{companies}</strong><p>+12% par rapport au mois dernier</p></div>

@@ -25,6 +25,24 @@ export default async function DashboardPage() {
         </div>
         <Link className="btn btn-primary" href="/app/declarations/nouvelle">Ajouter une déclaration</Link>
       </div>
+      <div className="page-banner">
+        <div>
+          <h3>Déclarations EDI disponibles</h3>
+          <p>Nous prenons en charge les principaux formulaires fiscaux selon le millésime en vigueur.</p>
+        </div>
+        <details>
+          <summary className="btn">Voir les EDI supportés</summary>
+          <div className="card" style={{position: "absolute", right: 28, marginTop: 12, maxWidth: 520, zIndex: 2}}>
+            <h3>Types de déclarations prises en charge</h3>
+            <ul className="clean">
+              <li>IS – Réel Simplifié : 2033A à 2033G + 2065</li>
+              <li>IS – Réel Normal : 2050 à 2059G + 2065</li>
+              <li>BIC, BNC, SCI, SCM, BA</li>
+              <li>TVA CA3, CA12, CVAE et déclarations associées</li>
+            </ul>
+          </div>
+        </details>
+      </div>
       <div className="kpi-grid">
         <div className="kpi"><span>Total Déclarations</span><strong>{declarations.length}</strong><p>+2 ce mois-ci</p></div>
         <div className="kpi"><span>Entreprises</span><strong>{companies.length}</strong><p>Actives</p></div>

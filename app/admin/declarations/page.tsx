@@ -7,6 +7,7 @@ export default async function AdminDeclarationsPage() {
   return (
     <>
       <div className="page-title"><div><h1 style={{fontSize: 38, margin: 0}}>Déclarations</h1><p>Gestion des modèles, types de déclaration et déclarations soumises.</p></div><button className="btn btn-primary">Créer un nouveau modèle</button></div>
+      <div className="page-banner"><div><h3>Gestion des modèles</h3><p>Créez les types, documents PDF, champs, formules et règles d’anomalie comme prévu dans le cahier des charges.</p></div><button className="btn">Ajouter un type</button></div>
       <div className="grid-3" style={{marginBottom: 18}}>
         <div className="card"><h3>Modèles de déclaration</h3><p>Créez et configurez les formulaires PDF, champs et règles.</p><button className="btn btn-secondary">Voir les modèles</button></div>
         <div className="card"><h3>Types de déclaration</h3><p>TVA, IS, CET, revenus personnels et déclarations sociales.</p><button className="btn btn-secondary">Ajouter un type</button></div>
