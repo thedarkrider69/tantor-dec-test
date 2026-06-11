@@ -41,13 +41,21 @@ export default function NouvelleEntreprisePage({ searchParams }: { searchParams?
           <h1>Ajouter une entreprise</h1>
           <p>Recherchez l’entreprise avec son numéro SIREN puis vérifiez les informations préremplies.</p>
         </div>
-        <form className="siren-search-form" action="/app/entreprises/nouvelle" method="get">
-          <label htmlFor="siren">Numéro SIREN</label>
-          <div className="siren-search-line">
-            <input id="siren" name="siren" placeholder="Ex : 812345678" defaultValue={searchedSiren} required />
-            <button className="btn btn-primary" type="submit">Rechercher l’entreprise</button>
+        <div className="company-search-actions">
+          <form className="siren-search-form" action="/app/entreprises/nouvelle" method="get">
+            <label htmlFor="siren">Numéro SIREN</label>
+            <div className="siren-search-line">
+              <input id="siren" name="siren" placeholder="Ex : 812345678" defaultValue={searchedSiren} required />
+              <button className="btn btn-primary" type="submit">Rechercher l’entreprise</button>
+            </div>
+          </form>
+          <div className="manual-company-box">
+            <span>Entreprise introuvable ou saisie spécifique ?</span>
+            <Link className="btn btn-secondary manual-company-btn" href="/app/entreprises/nouvelle/manuelle">
+              Ajout manuel des informations
+            </Link>
           </div>
-        </form>
+        </div>
       </section>
 
       {hasSearch ? (
